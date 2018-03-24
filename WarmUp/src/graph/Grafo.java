@@ -45,7 +45,23 @@ public class Grafo implements IGrafo {
 
     @Override
     public boolean ehRegular() {
-        return false;
+    	int valor = 0, cont = 0;
+
+		Object[] v = this.vertices.toArray();
+		for (int i = 0; i < v.length; i++) {
+			if (i == 0) {
+				valor = this.getAdjacentes((Vertice) v[i]).size();
+			}
+			if (this.getAdjacentes((Vertice) v[i]).size() == valor) {
+				cont++;
+			}
+		}
+
+		if (cont == this.vertices.size()) {
+			return true;
+		} else {
+			return false;
+		}
     }
 
     @Override
