@@ -18,7 +18,19 @@ public class Grafo implements IGrafo {
 
     @Override
     public boolean ehCompleto() {
-        return false;
+    	int cont = 0;
+
+		for (Vertice v : this.vertices) {
+			if (this.getAdjacentes(v).size() == this.vertices.size() - 1) {
+				cont++;
+			}
+		}
+
+		if (cont == this.vertices.size()) {
+			return true;
+		} else {
+			return false;
+		}
     }
 
     @Override
