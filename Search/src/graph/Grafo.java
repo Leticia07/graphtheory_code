@@ -11,6 +11,7 @@ public class Grafo implements IGrafo {
 
     private Set<Vertice> vertices = new HashSet<Vertice>();
     private Set<Aresta> arestas = new HashSet<Aresta>();
+    private ArrayList<Vertice> f;
 
     public Grafo(Set<Vertice> vertices, Set<Aresta> arestas) {
         this.vertices = vertices;
