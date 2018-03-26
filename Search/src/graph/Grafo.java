@@ -2,6 +2,7 @@ package graph;
 
 import graph.interfaces.IGrafo;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -40,7 +41,26 @@ public class Grafo implements IGrafo {
 
     @Override
     public void buscaLargura() {
-
+    	f = new ArrayList<>();
+		ArrayList<Vertice> visitados = new ArrayList<>();
+		Object[] v = this.vertices.toArray();
+		Vertice u;
+		
+		visitados.add((Vertice)v[0]);
+		f.add((Vertice) v[0]);
+		
+		while(f.size() > 0) {
+			int z = 0;
+			u = f.get(0);
+			f.remove(u);
+			Object[] w = this.getAdjacentes(u).toArray();			
+			for(int i = 0; i < w.length;i++) {
+				if(!visitados.contains((Vertice)w[i])) {
+					visitados.add((Vertice)w[i]);
+					f.add((Vertice)w[i]);
+				}
+			}
+		}
     }
 
     @Override
