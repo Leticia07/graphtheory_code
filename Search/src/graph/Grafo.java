@@ -151,16 +151,6 @@ public class Grafo implements IGrafo {
     	}
     }
     
-    public Vertice getVertice (String nome) {
-    	Vertice v = null;
-    	for (Vertice vertice:this.vertices) {
-    		if(vertice.getNome() == nome) {
-    			v = vertice;
-    		}
-    	}
-    	return v;
-    }
-    
     public double getPesoAresta(Vertice v1, Vertice v2) {
     	double peso = 0;
     	for(Aresta aresta: this.arestas) {
